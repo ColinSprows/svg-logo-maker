@@ -38,3 +38,23 @@ const questions = [
         }
     },
 ]
+
+const makeFile = function(fileName, data) {
+    fs.writeFile(fileName, data, "utf8", (err) => err ? console.log(err) : console.log("logo.svg" ));
+}
+
+function generateLogo(answers) {
+    shape = `${answers.shape}`
+    color = `${answers.color}`
+    characters = `${answers.characters}`
+    logo = {}
+    return logo;
+}
+
+inquirer    
+    .prompt([...questions])
+    .then((answers) => {
+        console.log(answers);
+        const logo = generateLogo(answers)
+        writeToFile("logo.svg", logo)
+    });

@@ -13,7 +13,10 @@ Create user prompt
     -Please select a shape
     -Please select a color
     -Enter your text
-  generate
+  
+Take user input
+
+generate(init)
 
 
 Output
