@@ -3,7 +3,7 @@ const fs = require('fs');
 const {Triangle, Circle, Square} = require('./lib/shapes');
 
 const colorArray =
-    ["blue"]
+    ["blue", "black", "silver", "gray", "white", "maroon", "red", "purple", "fuchsia", "green", "lime", "olive", "yellow", "navy", "teal", "aqua"]
 
 const questions = [
     {
@@ -60,7 +60,6 @@ function generateLogo(answers) {
 inquirer    
     .prompt([...questions])
     .then((answers) => {
-        console.log(answers);
         const logo = generateLogo(answers)
         makeFile("logo.svg", logo)
     });
