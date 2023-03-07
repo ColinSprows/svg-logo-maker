@@ -4,6 +4,8 @@
 
 I created this to udnerstand how polygon creation and SVG files work. It also familiarized me with JEST and how to incorporate testing into my workflow.
 
+[VIDEO DEMO](https://drive.google.com/file/d/1LJ_3MIcCVM8VNYxXBZ_NHLwpYtOr7-GC/view?usp=sharing)
+
 ## Installation
 
 First clone the repo, then make sure you are using Node version 16. You will also need to install inquirer version 8.2.4 by running 'npm i inquirer@8.2.4' in your terminal. Lastly you will need JEST installed to run the tests.
