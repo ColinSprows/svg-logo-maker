@@ -2,19 +2,18 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const {Triangle, Circle, Square} = require('./lib/shapes');
 
-const colorArray = {
-
-}
+const colorArray =
+    ["blue"]
 
 const questions = [
     {
-        type: list,
+        type: "list",
         message: "Please select a shape",
         name: "shape",
         choices: ["Triangle", "Circle", "Square"]
     },
     {
-        type: input,
+        type: "input",
         message: "Please select a color",
         name: "color",
         validate: function(input) {
@@ -26,9 +25,9 @@ const questions = [
         }
     },
     {
-        type: input,
+        type: "input",
         message: "Enter your text, 3 characters max",
-        name: "text",
+        name: "characters",
         validate: function(input) {
             if (input.length < 4 && input.length > 0) {
                 return true
@@ -47,8 +46,15 @@ function generateLogo(answers) {
     shape = `${answers.shape}`
     color = `${answers.color}`
     characters = `${answers.characters}`
-    logo = {}
-    return logo;
+    let logo;
+        if (shape === "Triangle") {
+            logo = new Triangle(color, characters)
+        } else if (shape === "Circle") {
+            logo = new Circle(color, characters)
+        } else {
+            logo = new Square(color, characters)
+        }
+    return logo.createLogo();
 }
 
 inquirer    
@@ -56,5 +62,5 @@ inquirer
     .then((answers) => {
         console.log(answers);
         const logo = generateLogo(answers)
-        writeToFile("logo.svg", logo)
+        makeFile("logo.svg", logo)
     });
