@@ -9,4 +9,11 @@ Add specifics
     -characters
 
 Create user prompt
+  index.js
+    -Please select a shape
+    -Please select a color
+    -Enter your text
+  generate
 
+
+Output
